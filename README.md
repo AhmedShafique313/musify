@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+Musify App Updated version using Flutter
+Team Members Ahmed & Haiqa
+Dev IEO & Services By IEO Joint project
+
