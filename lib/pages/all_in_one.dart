@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:musify/widgets/favourite.dart';
+import 'package:musify/widgets/playlist_album.dart';
+import 'package:musify/widgets/trending_list.dart';
 
 class AllInOne extends StatefulWidget {
   const AllInOne({super.key});
@@ -78,7 +81,7 @@ class _AllInOneState extends State<AllInOne> {
                             text: 'Trending',
                           ),
                           Tab(
-                            text: 'New hits',
+                            text: 'Play list',
                           ),
                           Tab(
                             text: 'Favourites',
@@ -88,20 +91,12 @@ class _AllInOneState extends State<AllInOne> {
                           ),
                         ],
                       ),
-                      Flexible(
+                      const Flexible(
                           child: TabBarView(children: [
-                        Container(
-                          color: Colors.transparent,
-                        ),
-                        Container(
-                          color: Colors.transparent,
-                        ),
-                        Container(
-                          color: Colors.transparent,
-                        ),
-                        Container(
-                          color: Colors.transparent,
-                        ),
+                        Trending(),
+                        PlayListAlbums(),
+                        Favourites(),
+                        Trending(),
                       ])),
                     ]),
               )),
