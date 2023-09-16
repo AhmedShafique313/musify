@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:musify/all_in_one.dart';
-import 'package:musify/play_screen.dart';
+import 'package:musify/pages/all_in_one.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

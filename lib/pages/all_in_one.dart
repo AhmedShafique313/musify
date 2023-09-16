@@ -91,16 +91,16 @@ class _AllInOneState extends State<AllInOne> {
                       Flexible(
                           child: TabBarView(children: [
                         Container(
-                          color: Colors.white,
+                          color: Colors.transparent,
                         ),
                         Container(
-                          color: Colors.white,
+                          color: Colors.transparent,
                         ),
                         Container(
-                          color: Colors.white,
+                          color: Colors.transparent,
                         ),
                         Container(
-                          color: Colors.white,
+                          color: Colors.transparent,
                         ),
                       ])),
                     ]),

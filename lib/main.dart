@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:musify/splash_Screen.dart';
+import 'package:musify/pages/splash_Screen.dart';
 
 void main() {
   runApp(const MyApp());
