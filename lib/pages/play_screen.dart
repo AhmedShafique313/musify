@@ -1,11 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:musify/pages/all_in_one.dart';
 import 'package:musify/pages/music_page.dart';
-import 'package:musify/widgets/playlist_album.dart';
-import 'package:musify/widgets/trending_list.dart';
 
 class PlayScreen extends StatefulWidget {
   const PlayScreen({super.key});

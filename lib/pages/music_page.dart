@@ -1,8 +1,6 @@
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:musify/utils.dart';
 
 class MusicPage extends StatefulWidget {
   const MusicPage({super.key});
@@ -12,7 +10,7 @@ class MusicPage extends StatefulWidget {
 }
 
 class _MusicPageState extends State<MusicPage> {
-  bool isplaying = false;
+  bool isPlaying = false;
   late final AudioPlayer player;
   late final AssetSource path;
 
@@ -21,42 +19,43 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
-    initplayer();
+    initPlayer();
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     player.dispose();
     super.dispose();
   }
 
-  Future initplayer() async {
+  Future initPlayer() async {
     player = AudioPlayer();
-    path = AssetSource('assets/audio/Osmanan.mp3');
+    path = AssetSource('audios/Osmanan.mp3');
 
+    // set a callback for changing duration
     player.onDurationChanged.listen((Duration d) {
       setState(() => _duration = d);
     });
 
+    // set a callback for position change
     player.onPositionChanged.listen((Duration p) {
-      setState(() => _duration = p);
+      setState(() => _position = p);
     });
 
+    // set a callback for when audio ends
     player.onPlayerComplete.listen((_) {
-      setState(() => _duration = _position);
+      setState(() => _position = _duration);
     });
   }
 
   void playPause() async {
-    if (isplaying) {
+    if (isPlaying) {
       player.pause();
-      isplaying = false;
+      isPlaying = false;
     } else {
       player.play(path);
-      isplaying = true;
+      isPlaying = true;
     }
     setState(() {});
   }
@@ -143,21 +142,21 @@ class _MusicPageState extends State<MusicPage> {
                     height: 10,
                   ),
                   Slider(
-                    min: 0,
-                    max: _duration.inSeconds.toDouble(),
                     value: _position.inSeconds.toDouble(),
                     onChanged: (value) async {
                       await player.seek(Duration(seconds: value.toInt()));
                       setState(() {});
                     },
-                    activeColor: const Color.fromARGB(255, 7, 17, 205),
-                    inactiveColor: Colors.white,
+                    min: 0,
+                    max: _duration.inSeconds.toDouble(),
+                    inactiveColor: Colors.grey,
+                    activeColor: Colors.red,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: [Text(_duration.inSeconds.toString())],
+                      children: [Text(_duration.format())],
                     ),
                   ),
                   const SizedBox(
@@ -180,7 +179,7 @@ class _MusicPageState extends State<MusicPage> {
                       InkWell(
                         onTap: playPause,
                         child: Icon(
-                          isplaying
+                          isPlaying
                               ? Icons.play_disabled
                               : Icons.play_circle_fill,
                           size: 60,
