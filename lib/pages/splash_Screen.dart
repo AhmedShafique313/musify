@@ -34,6 +34,24 @@ class _SplashScreenState extends State<SplashScreen> {
           ])),
       child: const Scaffold(
         backgroundColor: Colors.transparent,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+                child: Icon(
+              Icons.music_note,
+              size: 120,
+              color: Colors.blue,
+            )),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Musify',
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
       ),
     );
   }

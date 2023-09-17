@@ -126,12 +126,12 @@ class _MusicPageState extends State<MusicPage> {
                           height: 30,
                         ),
                         const Text(
-                          'Love me like you do',
+                          'Develet Benim',
                           style: TextStyle(
                               decoration: TextDecoration.none, fontSize: 28),
                         ),
                         const Text(
-                          'Elle Goulding',
+                          'Kurulas Osman',
                           style: TextStyle(
                               decoration: TextDecoration.none, fontSize: 14),
                         ),
@@ -150,7 +150,7 @@ class _MusicPageState extends State<MusicPage> {
                     min: 0,
                     max: _duration.inSeconds.toDouble(),
                     inactiveColor: Colors.grey,
-                    activeColor: Colors.red,
+                    activeColor: Colors.blue,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
@@ -180,7 +180,7 @@ class _MusicPageState extends State<MusicPage> {
                         onTap: playPause,
                         child: Icon(
                           isPlaying
-                              ? Icons.play_disabled
+                              ? Icons.pause_circle_filled
                               : Icons.play_circle_fill,
                           size: 60,
                         ),

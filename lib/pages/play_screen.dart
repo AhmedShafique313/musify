@@ -83,12 +83,12 @@ class _PlayScreenState extends State<PlayScreen> {
                       ),
                       const Center(
                           child: Text(
-                        'Love me like you do',
+                        'Develet Benim',
                         style: TextStyle(fontSize: 20),
                       )),
                       const Center(
                           child: Text(
-                        'Elle Goulding',
+                        'Kurulas Osman',
                         style: TextStyle(fontSize: 14),
                       )),
                       const SizedBox(
@@ -171,20 +171,20 @@ class _PlayScreenState extends State<PlayScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Love me like you do",
+                                  "Develet Benim",
                                   style: TextStyle(fontSize: 20),
                                 ),
                                 Row(
                                   children: [
-                                    Text('Elle Goulding  '),
-                                    Text("05-30")
+                                    Text('Kurulas Osman  '),
+                                    Text("03-52")
                                   ],
                                 ),
                               ],
                             ),
                           ),
                           SizedBox(
-                            width: 125,
+                            width: 165,
                           ),
                           Icon(
                             Icons.play_circle_fill_outlined,
